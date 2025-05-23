@@ -13,6 +13,7 @@ import ProfileItem from "@/components/common/ProfileItem";
 import MainContainer from "@/components/layout/MainContainer";
 import LanguageIcon from "@/components/icons/LanguageIcon";
 import { Locale } from "@/types";
+import LogoutButton from "@/components/common/LogoutButton";
 
 export default async function page() {
   const t = await getTranslations("myAccount");
@@ -41,11 +42,7 @@ export default async function page() {
             Icon={OutlineFormIcon}
             href="/my-account/orders"
           />
-          <ProfileItem
-            title={t("wallet")}
-            Icon={WalletIcon}
-            href="/my-account/wallet"
-          />
+          <ProfileItem title={t("wallet")} Icon={WalletIcon} href="/wallet" />
           <ProfileItem
             title={t("address")}
             Icon={LocationPinIcon}
@@ -82,9 +79,7 @@ export default async function page() {
               </Link>
             </div>
           </ProfileItem>
-          <CustomButton className="w-full mt-4 md:hidden" size="md">
-            {t("logout")}
-          </CustomButton>
+          <LogoutButton />
         </div>
       </div>
     </MainContainer>
