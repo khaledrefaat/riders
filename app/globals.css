@@ -163,9 +163,15 @@ html body[data-scroll-locked] {
 body,
 html,
 button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 * {
   @apply font-semibold;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 
@@ -173,6 +179,10 @@ label,
 div,
 span,
 p {
+  overflow-x: hidden !important;
+}
+
+#_rht_toaster div {
   overflow: hidden !important;
 }
 

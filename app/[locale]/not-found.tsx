@@ -10,7 +10,7 @@ const NotFound: React.FC = async () => {
   return (
     // height = 596,
     // width = 665,
-    <div className="min-h-screen w-[100vw] flex flex-col items-center md:justify-center gap-y-8 mt-28 md:mt-0">
+    <div className="min-h-screen w-[100vw] flex flex-col items-center md:justify-center gap-y-8 mt-10 md:mt-0">
       <NotFoundIcon />
       <Image
         src="/bike.png"

@@ -1,6 +1,4 @@
-import CustomButton from "@/components/common/CustomButton";
 import Separator from "@/components/common/Separator";
-import EditProfileIcon from "@/components/icons/EditProfileIcon";
 import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import WalletIcon from "@/components/icons/WalletIcon";
@@ -14,28 +12,17 @@ import MainContainer from "@/components/layout/MainContainer";
 import LanguageIcon from "@/components/icons/LanguageIcon";
 import { Locale } from "@/types";
 import LogoutButton from "@/components/common/LogoutButton";
+import ProfileData from "./components/ProfileData";
 
 export default async function page() {
   const t = await getTranslations("myAccount");
   const locale = (await getLocale()) as Locale;
 
-  const name = "Husain Al Saffar";
-  const phone = "+965 50100432";
-
   return (
     <MainContainer>
-      <div className="bg-white md:bg-customGray-500 pt-8 md:pt-[90px]">
+      <div className="bg-white md:bg-customGray-500 md:pt-[90px]">
         <div className="bg-white flex-1 mx-auto md:rounded-[20px] xl:max-w-xl px-10 py-8 md:p-10">
-          <h3 className="text-xl">{name}</h3>
-          <div className="flex-row-between">
-            <p className="text-lg">{phone}</p>
-            <Link href="/my-account/edit">
-              <CustomButton className="gap-x-2 min-w-24" size="sm">
-                <EditProfileIcon />
-                {t("edit")}
-              </CustomButton>
-            </Link>
-          </div>
+          <ProfileData />
           <Separator className="h-[6px] mt-4 mb-6 md:mb-2" />
           <ProfileItem
             title={t("orders")}

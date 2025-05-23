@@ -1,6 +1,7 @@
 "use client";
 
 import CustomButton from "@/components/common/CustomButton";
+import { useRouter } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import toast from "react-hot-toast";
 
 export default function TopUp() {
   const t = useTranslations("topUp");
+  const router = useRouter();
   const [amount, setAmount] = useState(0);
 
   function handelInputChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -15,7 +17,12 @@ export default function TopUp() {
   }
 
   function handelSubmit() {
-    toast.error(t("description"));
+    if (amount > 20 && amount !== 0) {
+      toast.error(t("description"));
+    } else {
+      toast.success(t("success"));
+      router.push("/wallet");
+    }
     console.log(amount);
   }
 

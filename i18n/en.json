@@ -239,6 +239,7 @@
    "topUp": {
     "topUp": "Top Up",
     "description": "Enter an amount from KWD 5 - KWD 20 or select amount",
-    "kwd": "KWD"
+    "kwd": "KWD",
+    "success": "Top up successful"
    }
 }

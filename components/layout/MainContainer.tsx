@@ -11,7 +11,7 @@ export default function MainContainer({
   return (
     <main
       className={cn(
-        "min-h-[80vh] pb-20 md:pb-0 md:bg-customGray-500 relative",
+        "min-h-[80vh] pb-32 md:pb-0 md:bg-customGray-500 relative",
         className
       )}
     >
