@@ -6,9 +6,11 @@ import WalletIcon from "../icons/WalletIcon";
 import AccountIcon from "../icons/AccountIcon";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
+import { useAuthStore } from "@/store/auth-store";
 
 export default function BottomBar() {
   const t = useTranslations("bottomBar");
+  const isAuth = useAuthStore((state) => state.authenticated);
 
   const navItems = [
     { name: t("home"), href: "/home", icon: HomeIcon },
@@ -18,6 +20,10 @@ export default function BottomBar() {
   ];
 
   const pathname = usePathname();
+
+  if (!isAuth) {
+    return null;
+  }
 
   return (
     <nav className="fixed bottom-0 left-0 bg-white border-t border-gray-200 right-0 flex justify-around items-center h-16 shadow-lg md:hidden">
